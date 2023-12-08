@@ -19,7 +19,8 @@ public class Constant extends TreeNode {
   
   @Override
   public void draw(Graphics g, int x, int y) {
-    g.drawRect(x, y, 100, 100);
+    g.drawRect(x, y, 50, 50);
+    g.drawString(this.getLabel(), x+10, y+20);
   }
 
   @Override

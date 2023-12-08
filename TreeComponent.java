@@ -6,8 +6,8 @@ import java.awt.event.MouseEvent;
 
 public class TreeComponent extends JComponent {
   
-  private final static int ORIGIN_X = 500;
-  private final static int ORIGIN_Y = 200;
+  private final static int ORIGIN_X = 1100;
+  private final static int ORIGIN_Y = 300;
 
   private final TreeNode tree;
 

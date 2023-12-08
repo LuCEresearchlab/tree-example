@@ -20,6 +20,8 @@ public class Main {
     );
 
     tree.print();
+    System.out.println();
+    System.out.println( ((FunctionCall) tree).getCounter());
 
     new MainFrame(tree);
 
