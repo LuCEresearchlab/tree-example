@@ -6,7 +6,10 @@ public class Main {
       new FunctionCall("rectangle",
         new Constant("100"),
         new Constant("200"),
-        new Constant("red")
+        new FunctionCall("rgb_color",
+        new Constant("255"),
+        new Constant("0"),
+        new Constant("0"))
       ),
       new FunctionCall("triangle",
         new Constant("100"),
