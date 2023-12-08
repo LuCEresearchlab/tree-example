@@ -12,6 +12,7 @@ public class Constant extends TreeNode {
    */
   public Constant(String label) {
     this.label = label;
+    TreeComponent.setCounter();
   }
 
   /**

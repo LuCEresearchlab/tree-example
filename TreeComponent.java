@@ -14,11 +14,29 @@ public class TreeComponent extends JComponent {
    *
    */
   private final static int ORIGIN_Y = 300;
+  /**
+   *
+   */
+  public static int counter;
 
   /**
    *
    */
   private final TreeNode tree;
+  
+  /**
+   * @return
+   */
+  public static int getCounter() {
+    return counter;
+  }
+
+  /**
+   * @param counter
+   */
+  public static void setCounter() {
+    TreeComponent.counter = counter+1;
+  }
 
   /**
    * @param tree

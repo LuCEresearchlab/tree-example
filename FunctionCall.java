@@ -13,10 +13,6 @@ public class FunctionCall extends TreeNode {
    *
    */
   private ArrayList<TreeNode> children;
-  /**
-   *
-   */
-  private int counter;
 
   /**
    * @param label
@@ -24,6 +20,7 @@ public class FunctionCall extends TreeNode {
    */
   public FunctionCall(String label, TreeNode... nodes) {
     this.label = label;
+    TreeComponent.setCounter();
     children = new ArrayList<TreeNode>(Arrays.asList(nodes));
   }
 
@@ -32,13 +29,6 @@ public class FunctionCall extends TreeNode {
    */
   public String getLabel() {
     return label;
-  }
-
-  /**
-   * @return
-   */
-  public int getCounter(){
-    return counter;
   }
 
   /**
@@ -66,7 +56,6 @@ public class FunctionCall extends TreeNode {
     public void draw(Graphics g, int x, int y) {
     g.drawRect(x, y, 100, 100);
     g.drawString(this.getLabel(), x+20, y+40);
-    counter += 1;
     for (int i = 0; i < this.getChildren().size(); i++) {
       TreeNode child = children.get(i);
       if (child instanceof FunctionCall){
