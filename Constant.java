@@ -2,12 +2,21 @@ import java.awt.Graphics;
 
 public class Constant extends TreeNode {
 
+  /**
+   *
+   */
   private String label;
 
+  /**
+   * @param label
+   */
   public Constant(String label) {
     this.label = label;
   }
 
+  /**
+   * @return
+   */
   public String getLabel() {
     return label;
   }

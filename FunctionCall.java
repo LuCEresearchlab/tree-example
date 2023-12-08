@@ -5,23 +5,45 @@ import java.util.Arrays;
 
 public class FunctionCall extends TreeNode {
 
+  /**
+   *
+   */
   private String label;
+  /**
+   *
+   */
   private ArrayList<TreeNode> children;
+  /**
+   *
+   */
   private int counter;
 
+  /**
+   * @param label
+   * @param nodes
+   */
   public FunctionCall(String label, TreeNode... nodes) {
     this.label = label;
     children = new ArrayList<TreeNode>(Arrays.asList(nodes));
   }
 
+  /**
+   * @return
+   */
   public String getLabel() {
     return label;
   }
 
+  /**
+   * @return
+   */
   public int getCounter(){
     return counter;
   }
 
+  /**
+   * @return
+   */
   public ArrayList<TreeNode> getChildren() {
     return children;
   }

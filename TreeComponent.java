@@ -6,11 +6,23 @@ import java.awt.event.MouseEvent;
 
 public class TreeComponent extends JComponent {
   
+  /**
+   *
+   */
   private final static int ORIGIN_X = 1100;
+  /**
+   *
+   */
   private final static int ORIGIN_Y = 300;
 
+  /**
+   *
+   */
   private final TreeNode tree;
 
+  /**
+   * @param tree
+   */
   public TreeComponent(TreeNode tree) {
     this.tree = tree;
     addMouseListener(new MouseAdapter() {
