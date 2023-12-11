@@ -35,7 +35,7 @@ public class TreeComponent extends JComponent {
    * @param counter
    */
   public static void setCounter() {
-    TreeComponent.counter = counter+1;
+    counter = counter+1;
   }
 
   /**

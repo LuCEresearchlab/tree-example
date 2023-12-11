@@ -9,6 +9,7 @@ public class FunctionCall extends TreeNode {
    *
    */
   private String label;
+ private int size;
   /**
    *
    */
@@ -18,8 +19,9 @@ public class FunctionCall extends TreeNode {
    * @param label
    * @param nodes
    */
-  public FunctionCall(String label, TreeNode... nodes) {
+  public FunctionCall(String label, int size, TreeNode... nodes) {
     this.label = label;
+    this.size = size;
     TreeComponent.setCounter();
     children = new ArrayList<TreeNode>(Arrays.asList(nodes));
   }
@@ -30,7 +32,19 @@ public class FunctionCall extends TreeNode {
   public String getLabel() {
     return label;
   }
-
+  /**
+   * @return
+   */
+  @Override
+  public int getSize() {
+      return size;
+    }
+  /**
+   * @param size
+   */
+  public void setSize(int size) {
+      this.size = size;
+    }
   /**
    * @return
    */
@@ -54,12 +68,12 @@ public class FunctionCall extends TreeNode {
 
   @Override
     public void draw(Graphics g, int x, int y) {
-    g.drawRect(x, y, 100, 100);
+    g.drawRect(x, y, 100, size*55-5);
     g.drawString(this.getLabel(), x+20, y+40);
     for (int i = 0; i < this.getChildren().size(); i++) {
       TreeNode child = children.get(i);
       if (child instanceof FunctionCall){
-       child.draw(g, x - 110, y + 110 *i);
+       child.draw(g, x - 105, y - child.getSize()*55+110*i);
       } else if (child instanceof Constant){
         child.draw(g, x - 55, y + 55 * i);
       }

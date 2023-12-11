@@ -1,7 +1,9 @@
 import java.awt.Graphics;
 
 public abstract class TreeNode {
-  
+
+
+  public abstract int getSize();  
   /**
    * 
    */

@@ -7,6 +7,8 @@ public class Constant extends TreeNode {
    */
   private String label;
 
+  private int size;
+
   /**
    * @param label
    */
@@ -20,6 +22,15 @@ public class Constant extends TreeNode {
    */
   public String getLabel() {
     return label;
+  }
+
+  @Override
+  public int getSize() {
+    return size;
+  }
+
+  public void setSize(int size) {
+    this.size = size;
   }
 
   @Override
