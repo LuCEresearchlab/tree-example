@@ -1,4 +1,5 @@
 import java.awt.Graphics;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -9,7 +10,8 @@ public class FunctionCall extends TreeNode {
    *
    */
   private String label;
- private int size;
+  private int size;
+  private Point position = new Point();
   /**
    *
    */
@@ -24,6 +26,7 @@ public class FunctionCall extends TreeNode {
     this.size = size;
     TreeComponent.setCounter();
     children = new ArrayList<TreeNode>(Arrays.asList(nodes));
+    this.setPosition();
   }
 
   /**
@@ -32,6 +35,26 @@ public class FunctionCall extends TreeNode {
   public String getLabel() {
     return label;
   }
+  public Point getPosition() {
+    return position;
+  }
+
+  @Override
+  public void setPosition() {
+    int multipliar =0;
+    for (int i = 0; i < this.getChildren().size(); i++){
+      if (children.get(i) instanceof Constant){
+        multipliar +=1;
+      if (children.get(i) instanceof FunctionCall){
+        multipliar += children.get(i).getSize();
+      }
+    this.position.y = multipliar*55 + 5;
+    this.position.x = 0;
+      }
+    }
+    
+  }
+
   /**
    * @return
    */
@@ -73,7 +96,8 @@ public class FunctionCall extends TreeNode {
     for (int i = 0; i < this.getChildren().size(); i++) {
       TreeNode child = children.get(i);
       if (child instanceof FunctionCall){
-       child.draw(g, x - 105, y - child.getSize()*55+110*i);
+        if (i%2==0){child.draw(g, x - 105, y+this.position.y);}
+        else{ child.draw(g, x - 105, -i*this.position.y);}
       } else if (child instanceof Constant){
         child.draw(g, x - 55, y + 55 * i);
       }

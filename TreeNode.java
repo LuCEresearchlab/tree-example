@@ -3,7 +3,8 @@ import java.awt.Graphics;
 public abstract class TreeNode {
 
 
-  public abstract int getSize();  
+  public abstract int getSize();
+  public abstract void setPosition();  
   /**
    * 
    */
